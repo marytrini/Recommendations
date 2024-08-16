@@ -18,12 +18,12 @@ export default {
       animation: {
         slide: "slide 10s linear infinite",
       },
-      // keyframes: {
-      //   slide: {
-      //     "0%": { transform: "translateX(100%)" },
-      //     "100%": { transform: "translateX(-100%)" },
-      //   },
-      // },
+      keyframes: {
+        slide: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
     },
     screens: {
       "2xl": { max: "1920px" },

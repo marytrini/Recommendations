@@ -15,7 +15,14 @@ const LandingPage = () => {
           <div className="flex justify-center">
             <Link to="/recommender">
               <button className="w-60 h-auto rounded-lg mr-4 font-pop text-white font-semibold sm:text-base lg:text-lg 2xl:text-xl p-2 hover:bg-title-hover hover:text-amber-500 hover:border-solid hover:border-amber-500 hover:border-[1px]">
-                Recommendations
+                Recommendaciones
+              </button>
+            </Link>
+          </div>
+          <div className="flex justify-center">
+            <Link to="/predictor">
+              <button className="w-60 h-auto rounded-lg mr-4 font-pop text-white font-semibold sm:text-base lg:text-lg 2xl:text-xl p-2 hover:bg-title-hover hover:text-amber-500 hover:border-solid hover:border-amber-500 hover:border-[1px]">
+                Predicciones
               </button>
             </Link>
           </div>
