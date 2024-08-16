@@ -5,10 +5,11 @@ export default {
     extend: {
       backgroundColor: {
         dark: "#333745",
+        "card-bg": "#3e3120",
+        "card-blocks": "#262221",
       },
       backgroundImage: {
-        custom_gradient:
-          "linear-gradient(to top right, rgba(33,33,36,1) 0%, rgba(24,34,66,1) 60%, rgba(37,70,126,1) 100%)",
+        "custom-bg": "url(./assets/restaurant.jpeg)",
       },
       fontFamily: {
         pop: ["Poppins", "sans-serif"],

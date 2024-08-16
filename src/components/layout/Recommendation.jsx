@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import NavBar from "../common/navBar/NavBar";
 import Footer from "../common/footer/Footer";
+import Card from "../common/card/Card";
 
 const Recommendation = () => {
   const [query, setQuery] = useState("");
@@ -44,7 +45,7 @@ const Recommendation = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col bg-custom_gradient">
+    <div className="min-h-screen w-full flex flex-col bg-custom-bg">
       <header>
         <div className="mt-8 mb-12">
           <h1 className="font-pop text-2xl text-center text-white font-black">
@@ -76,16 +77,9 @@ const Recommendation = () => {
             </h1>
           )}
         </div>
-        <div className="flex flex-wrap gap-4 sm:items-center sm:ml-10">
+        <div className="flex flex-wrap gap-4 justify-center">
           {recommendation.map((element, index) => (
-            <div
-              key={index}
-              className="sm:w-32 lg:w-60 h-auto p-6 rounded-md bg-slate-500"
-            >
-              <h2>{element[0]}</h2>
-              <p>{element[1]}</p>
-              <p>{element[2]}</p>
-            </div>
+            <Card key={index} element={element} />
           ))}
         </div>
       </main>
