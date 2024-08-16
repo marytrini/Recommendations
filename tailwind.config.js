@@ -7,6 +7,7 @@ export default {
         dark: "#333745",
         "card-bg": "#3e3120",
         "card-blocks": "#262221",
+        "title-hover": "#151311",
       },
       backgroundImage: {
         "custom-bg": "url(./assets/restaurant.jpeg)",

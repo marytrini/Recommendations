@@ -49,7 +49,7 @@ const Recommendation = () => {
       <header>
         <div className="mt-8 mb-12">
           <h1 className="font-pop text-2xl text-center text-white font-black">
-            Recomendaciones para ti
+            Recomendaciones
           </h1>
         </div>
         <div>
@@ -70,9 +70,9 @@ const Recommendation = () => {
             {error}
           </p>
         )}
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-12 justify-center">
           {!error && recommendation.length > 0 && (
-            <h1 className="font-pop text-white font-bold text-center sm:text-xs lg:text-lg 2xl:text-xl mt-8 mx-12">
+            <h1 className="font-pop text-white font-bold text-center sm:text-xs lg:text-lg 2xl:text-xl hover:text-amber-500 my-8">
               Recomendaciones basadas en {query}:
             </h1>
           )}

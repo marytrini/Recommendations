@@ -6,14 +6,14 @@ const Card = ({ element }) => {
       <div className="h-24 bg-card-blocks rounded-md p-4">
         {" "}
         Restaurante:
-        <h2 className="text-gray-100 font-bold sm:text-sm 2xl:text-lg text-center hover:text-blue-950">
+        <h2 className="text-gray-100 font-bold sm:text-sm 2xl:text-lg text-center hover:text-amber-500">
           {element[0]}
         </h2>
       </div>
       <div className="h-32 bg-card-blocks rounded-md p-4 text-amber-400 text-xs">
         {" "}
         Dirección:
-        <p className="sm:text-xs 2xl:text-sm text-center text-white">
+        <p className="sm:text-xs 2xl:text-sm text-center text-white hover:text-amber-600">
           {element[1]}
         </p>
       </div>
@@ -25,7 +25,7 @@ const Card = ({ element }) => {
       <div className="h-32 bg-card-blocks rounded-md p-4 text-amber-400 text-xs">
         {" "}
         descripción:
-        <p className="sm:text-xs 2xl:text-base text-center text-white">
+        <p className="sm:text-xs 2xl:text-base text-center text-white hover:text-amber-600">
           {" "}
           {element[3]}
         </p>
