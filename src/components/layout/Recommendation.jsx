@@ -2,13 +2,16 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import NavBar from "../common/navBar/NavBar";
 import Footer from "../common/footer/Footer";
-import Card from "../common/card/Card";
+import ResultsItem from "./ResultsItem";
+import RecommendationModal from "./RecommendationModal";
 
 const Recommendation = () => {
   const [query, setQuery] = useState("");
   const [recommendation, setRecommendation] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const getRecommendations = async (element) => {
     setLoading(true);
@@ -44,6 +47,10 @@ const Recommendation = () => {
     setQuery(query);
   };
 
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+    setIsModalOpen(true);
+  };
   return (
     <div className="min-h-screen w-full flex flex-col bg-custom-bg">
       <header>
@@ -79,9 +86,20 @@ const Recommendation = () => {
         </div>
         <div className="flex flex-wrap gap-4 justify-center">
           {recommendation.map((element, index) => (
-            <Card key={index} element={element} />
+            <ResultsItem
+              key={index}
+              element={element}
+              onItemClick={handleItemClick}
+            />
           ))}
         </div>
+        {selectedItem && (
+          <RecommendationModal
+            openModal={isModalOpen}
+            closeModal={() => setIsModalOpen(false)}
+            element={selectedItem}
+          />
+        )}
       </main>
       <footer>
         <Footer />
