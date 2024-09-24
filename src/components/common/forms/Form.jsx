@@ -1,55 +1,6 @@
-import axios from "axios";
-import { useState } from "react";
-import Results from "../../layout/Results";
+import PropTypes from "prop-types";
 
-const Form = () => {
-  const [formData, setFormData] = useState({
-    county: "",
-    categoria: "",
-    negativas: 0,
-    positivas: 0,
-  });
-  const [results, setResults] = useState(null);
-  const [error, setError] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleInputChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    // Convierte los valores a minúsculas
-    const { county, categoria, negativas, positivas } = formData;
-    const lowerCounty = county.toLowerCase();
-    const lowerCategoria = categoria.toLowerCase();
-    console.log(formData);
-
-    // Verifica que todos los campos estén completos
-    if (!negativas || !positivas || !lowerCounty || !lowerCategoria) {
-      setError("Todos los campos son requeridos.");
-      return;
-    }
-    setError("");
-
-    try {
-      const response = await axios.get(
-        `https://restaurants.rammerbot.com/predictor/?county=${lowerCounty}&categoria=${lowerCategoria}&negativas=${negativas}&positivas=${positivas}`
-      );
-      const data = response.data;
-      setResults(data);
-      setIsModalOpen(true);
-      console.log("Predicción: ", JSON.stringify(data));
-    } catch (error) {
-      console.error("Error en la solicitud:", error);
-      setError("Error en la solicitud");
-    }
-  };
-
+const Form = ({ formData, handleInputChange, handleSubmit, error }) => {
   return (
     <div className="flex flex-col sm:flex-row justify-evenly items-center p-8">
       <div className="2xl:w-fit bg-card-bg items-center p-8 rounded-xl shadow-md shadow-slate-700">
@@ -212,13 +163,19 @@ const Form = () => {
           {error && <p className="text-red-500">{error}</p>}
         </form>
       </div>
-      <Results
-        results={results}
-        openModal={isModalOpen}
-        closeModal={() => setIsModalOpen(false)}
-      />
     </div>
   );
+};
+Form.propTypes = {
+  formData: PropTypes.shape({
+    county: PropTypes.string.isRequired,
+    categoria: PropTypes.string.isRequired,
+    negativas: PropTypes.string.isRequired,
+    positivas: PropTypes.string.isRequired,
+  }).isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  error: PropTypes.string,
 };
 
 export default Form;
