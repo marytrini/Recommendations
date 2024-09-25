@@ -66,7 +66,7 @@ const Recommendation = () => {
           />
         </div>
       </header>
-      <main className="flex-grow">
+      <main className="flex-grow overflow-y-auto 2xl:mb-14">
         {loading && (
           <p className="font-pop text-white font-bold text-center mt-8">
             Loading...
@@ -84,7 +84,7 @@ const Recommendation = () => {
             </h1>
           )}
         </div>
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-col gap-4 justify-center mx-8">
           {recommendation.map((element, index) => (
             <ResultsItem
               key={index}
