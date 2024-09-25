@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import "animate.css";
 
 const ResultsItem = ({ element, onItemClick }) => {
   return (
