@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 const Form = ({ formData, handleInputChange, handleSubmit, error }) => {
   return (
     <div className="flex flex-col sm:flex-row justify-evenly items-center p-8">
-      <div className="2xl:w-fit bg-card-bg items-center p-8 rounded-xl shadow-md shadow-slate-700">
+      <div className="2xl:w-fit bg-card-bg items-center sm:p-4 2xl:p-8 rounded-xl shadow-md shadow-slate-700 sm:mx-4">
         <form onSubmit={handleSubmit}>
-          <div className="flex justify-center my-6">
+          <div className="flex flex-col justify-center my-6">
             <select
               name="county"
               id="county"
@@ -75,7 +75,7 @@ const Form = ({ formData, handleInputChange, handleSubmit, error }) => {
               <option value="Sierra">Sierra</option>
             </select>
           </div>
-          <div className="flex justify-center my-6">
+          <div className="flex flex-col justify-center my-6">
             <select
               name="categoria"
               id="category"
@@ -134,7 +134,13 @@ const Form = ({ formData, handleInputChange, handleSubmit, error }) => {
               <option value="family restaurant">Family restaurant</option>
             </select>
           </div>
-          <div className="flex justify-center object-fit my-6">
+          <div className="flex flex-col justify-center object-fit my-6">
+            <label
+              htmlFor="negativas"
+              className="text-white font-semibold sm:text-sm 2xl:text-lg mb-4"
+            >
+              negativas:{" "}
+            </label>
             <input
               type="text"
               name="negativas"
@@ -144,7 +150,13 @@ const Form = ({ formData, handleInputChange, handleSubmit, error }) => {
               className="sm:w-2/3 2xl:w-4/5 h-8 font-pop border-none outline-none rounded-md py-5 px-4 ml-[10px]"
             />
           </div>
-          <div className="flex justify-center object-fit my-6">
+          <div className="flex flex-col justify-center object-fit my-6">
+            <label
+              htmlFor="positivas"
+              className="text-white font-semibold sm:text-sm 2xl:text-lg mb-4"
+            >
+              positivas:{" "}
+            </label>
             <input
               type="text"
               name="positivas"

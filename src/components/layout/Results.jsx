@@ -11,7 +11,7 @@ const Results = ({ openModal, closeModal, results }) => {
 
   return (
     <div
-      className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50" // Fondo transparente oscuro
+      className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 sm:w-auto sm:mx-8" // Fondo transparente oscuro
       id="modalContainer"
       onClick={handleCloseModal}
     >
@@ -20,11 +20,11 @@ const Results = ({ openModal, closeModal, results }) => {
         {/* Fondo rojo solo en el modal */}
         <button
           onClick={closeModal}
-          className="text-white bg-amber-500 p-2 rounded-full"
+          className="text-white bg-amber-500 px-2 mb-8 rounded-2xl"
         >
           &times;
         </button>
-        <h2 className="font-pop text-lg font-bold text-white hover:text-amber-500">
+        <h2 className="font-pop text-lg font-bold text-white hover:text-amber-500 mb-2">
           Resultados:{" "}
         </h2>
         <p className="font-pop text-sm font-semibold text-white hover:text-amber-500">

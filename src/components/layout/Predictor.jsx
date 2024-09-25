@@ -59,7 +59,7 @@ const Predictor = () => {
           Predicciones
         </h1>
       </header>
-      <main className="flex-grow">
+      <main className="flex-grow overflow-auto 2xl:mb-12">
         <div className="mb-5 w-full flex">
           <Link to="/">
             <button
@@ -70,7 +70,7 @@ const Predictor = () => {
             </button>
           </Link>
         </div>
-        <div className="w-full max-w-2xl 2xl:max-w-xl sm:max-w-sm">
+        <div className="w-full max-w-2xl 2xl:max-w-xl sm:max-w-sm ">
           <Form
             formData={formData}
             handleInputChange={handleInputChange}
