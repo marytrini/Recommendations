@@ -12,7 +12,7 @@ const RecommendationModal = ({ openModal, closeModal, element }) => {
     <div
       id="ModalContainer"
       onClick={handleCloseModal}
-      className="fixed inset-0 bg-black flex justify-center items-center bg-opacity-20 backdrop-blur-sm"
+      className="fixed inset-0 bg-black flex justify-center items-center bg-opacity-20 backdrop-blur-sm mb-12"
     >
       <div>
         <Card element={element} />
